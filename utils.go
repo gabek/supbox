@@ -56,7 +56,7 @@ func FileExists(name string) bool {
 func getEncryptedPassword(asarPath string) string {
 	f, err := os.Open(asarPath)
 	if err != nil {
-		panic("Cnnot open asar file: " + asarPath)
+		panic("Cannot open asar file: " + asarPath)
 	}
 
 	// Search for the password

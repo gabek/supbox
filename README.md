@@ -4,13 +4,25 @@ This tool is for users of Pioneer's [Rekordbox v6](https://rekordbox.com/en/) to
 
 Since I use macOS, and I have an install of Rekordbox on macOS that's what I have it working with.  **However**, there's no reason that somebody who's using Rekordbox on Windows can't help out and make the tweaks needed to point to the file locations on a Windows install.  If there's any demand maybe I'll install a VM and install Rekordbox and I'll do it myself.
 
-# Overview
+# Usage
 
+1. [Download](https://github.com/gabek/supbox/releases/download/v0.0.1/supbox.zip) the zip file and unzip it somewhere.
 1. Open the _config/config.yaml_ file.
 2. Make sure the _application_ path points to your copy of Rekordbox.app (version 6) on your computer.
 3. Decide where you want the output files to go such as an "output" directory.  Create this directory if needed.
 4. Decide if you are using [OBS](https://obsproject.com/), [Audio Hijack](https://rogueamoeba.com/audiohijack/), or JSON output.
 5. You can remove any of the config file output destinations you're not using.
+6. Run `./supbox` from the command line.
+7. You should see output when tracks change that looks like
+```
+2020/05/13 11:34:27 {ID:6d655f64-f2e5-4ec9-bd51-3a2c86984c8e Artist:VNV Nation Name:Retaliate ImagePath:/Users/gabek/Library/Pioneer/rekordbox/share/PIONEER/Artwork/bd3/82718-334f-482d-ad0a-82a1f8ba2507/artwork.jpg}
+```
+
+**Note:** If you run into an error from macOS running `./supbox` from the command line saying it's not signed or from an unknown developer first open it directly via the finder just once, and it should be fine from then on.
+
+<center>
+  <img src="doc/openMacOS.png" width=30%>
+</center>
 
 
 # Using with [OBS](https://obsproject.com/)
@@ -65,6 +77,8 @@ An option to generate a JSON file with the Metadata is available for other uses.
 ```
 {"ID":"6d655f64-f2e5-4ec9-bd51-3a2c86984c8e","artist":"VNV Nation","track":"Retaliate","imagePath":"/Users/gabek/Library/Pioneer/rekordbox/share/PIONEER/Artwork/bd3/82718-334f-482d-ad0a-82a1f8ba2507/artwork.jpg"}
 ```
+
+A companion to this JSON output can be found with [json-scrobbler](https://github.com/gabek/json-scrobbler), a simple tool that just monitors a JSON file and then scrobbles the track data to Last.FM.  If you're a Last.FM user, here's a way to finally scrobble your DJ sets in real-time.
 
 # Disclaimers
 
