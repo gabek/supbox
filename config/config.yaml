@@ -1,0 +1,9 @@
+pollingInterval: 5s
+
+rekordbox:
+  application: /Applications/rekordbox 6/rekordbox.app
+
+output:
+  audioHijack: output/nowplaying-audiohijack.txt
+  json: output/nowplaying.json
+  obs: output/nowplaying-obs-*
